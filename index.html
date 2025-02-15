@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>API Documentation</h1>
+    <p>Browse API groups and their endpoints below.</p>
+  </header>
+
+  <main>
+    <section id="api-groups">
+      <h2>API Groups</h2>
+
+      <!-- User Management Group -->
+      <details>
+        <summary>User Management</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>GET /users</summary>
+              <div class="api-details">
+                <p><strong>Method:</strong> GET</p>
+                <p><strong>Endpoint:</strong> /users</p>
+                <p><strong>Description:</strong> Retrieve a list of users.</p>
+                <h4>Example Request:</h4>
+                <pre>GET https://api.example.com/users</pre>
+                <h4>Example Response:</h4>
+                <pre>
+{
+  "users": [
+    { "id": 1, "name": "John Doe" },
+    { "id": 2, "name": "Jane Smith" }
+  ]
+}
+                </pre>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>POST /users</summary>
+              <div class="api-details">
+                <p><strong>Method:</strong> POST</p>
+                <p><strong>Endpoint:</strong> /users</p>
+                <p><strong>Description:</strong> Create a new user.</p>
+                <h4>Example Request:</h4>
+                <pre>
+POST https://api.example.com/users
+{
+  "name": "New User",
+  "email": "newuser@example.com"
+}
+                </pre>
+                <h4>Example Response:</h4>
+                <pre>
+{
+  "id": 3,
+  "name": "New User",
+  "email": "newuser@example.com"
+}
+                </pre>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Product Management Group -->
+      <details>
+        <summary>Product Management</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>GET /products</summary>
+              <div class="api-details">
+                <p><strong>Method:</strong> GET</p>
+                <p><strong>Endpoint:</strong> /products</p>
+                <p><strong>Description:</strong> Retrieve a list of products.</p>
+                <h4>Example Request:</h4>
+                <pre>GET https://api.example.com/products</pre>
+                <h4>Example Response:</h4>
+                <pre>
+{
+  "products": [
+    { "id": 1, "name": "Product A" },
+    { "id": 2, "name": "Product B" }
+  ]
+}
+                </pre>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>POST /products</summary>
+              <div class="api-details">
+                <p><strong>Method:</strong> POST</p>
+                <p><strong>Endpoint:</strong> /products</p>
+                <p><strong>Description:</strong> Create a new product.</p>
+                <h4>Example Request:</h4>
+                <pre>
+POST https://api.example.com/products
+{
+  "name": "New Product",
+  "price": 99.99
+}
+                </pre>
+                <h4>Example Response:</h4>
+                <pre>
+{
+  "id": 3,
+  "name": "New Product",
+  "price": 99.99
+}
+                </pre>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 API Documentation</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
