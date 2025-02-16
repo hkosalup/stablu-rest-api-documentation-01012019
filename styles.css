@@ -25,7 +25,7 @@ body {
   
   details {
     margin-bottom: 15px;
-    /* border: 1px solid #ddd; */
+    border: 1px solid #ddd;
     border-radius: 4px;
     background: #f9f9f9;
   }
@@ -59,8 +59,8 @@ body {
   }
   
   details summary {
-    background: #333;
-    color: #fff;
+    background: #f2f3f9;
+    color: #333;
     padding: 10px;
     font-size: 1.1em;
     cursor: pointer;
@@ -68,13 +68,13 @@ body {
     border-radius: 4px;
   }
   
-  details summary:hover {
+  /* details summary:hover {
     background: #555;
-  }
+  } */
 
   details summary span {
     font-size: 0.9em;
-    color: #ccc;
+    /* color: #ccc; */
     margin-left: 10px;
   }
 

@@ -8,126 +8,2679 @@
 </head>
 <body>
   <header>
-    <h1>API Documentation</h1>
-    <p>Browse API groups and their endpoints below.</p>
+    <h1>Stablu SIBMA Proof of Concept API Documentation</h1>
+    <p>This is the REST APIs</p>
   </header>
 
   <main>
     <section id="api-groups">
-      <h2>API Groups</h2>
-
-      <!-- User Management Group -->
-      <details>
-        <summary>User Management</summary>
-        <ul>
-          <li>
-            <details>
-              <summary>GET /users</summary>
-              <div class="api-details">
-                <p><strong>Method:</strong> GET</p>
-                <p><strong>Endpoint:</strong> /users</p>
-                <p><strong>Description:</strong> Retrieve a list of users.</p>
-                <h4>Example Request:</h4>
-                <pre>GET https://api.example.com/users</pre>
-                <h4>Example Response:</h4>
-                <pre>
-{
-  "users": [
-    { "id": 1, "name": "John Doe" },
-    { "id": 2, "name": "Jane Smith" }
-  ]
-}
-                </pre>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>POST /users</summary>
-              <div class="api-details">
-                <p><strong>Method:</strong> POST</p>
-                <p><strong>Endpoint:</strong> /users</p>
-                <p><strong>Description:</strong> Create a new user.</p>
-                <h4>Example Request:</h4>
-                <pre>
-POST https://api.example.com/users
-{
-  "name": "New User",
-  "email": "newuser@example.com"
-}
-                </pre>
-                <h4>Example Response:</h4>
-                <pre>
-{
-  "id": 3,
-  "name": "New User",
-  "email": "newuser@example.com"
-}
-                </pre>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </details>
-
-      <!-- Product Management Group -->
-      <details>
-        <summary>Product Management</summary>
-        <ul>
-          <li>
-            <details>
-              <summary>GET /products</summary>
-              <div class="api-details">
-                <p><strong>Method:</strong> GET</p>
-                <p><strong>Endpoint:</strong> /products</p>
-                <p><strong>Description:</strong> Retrieve a list of products.</p>
-                <h4>Example Request:</h4>
-                <pre>GET https://api.example.com/products</pre>
-                <h4>Example Response:</h4>
-                <pre>
-{
-  "products": [
-    { "id": 1, "name": "Product A" },
-    { "id": 2, "name": "Product B" }
-  ]
-}
-                </pre>
-              </div>
-            </details>
-          </li>
-          <li>
-            <details>
-              <summary>POST /products</summary>
-              <div class="api-details">
-                <p><strong>Method:</strong> POST</p>
-                <p><strong>Endpoint:</strong> /products</p>
-                <p><strong>Description:</strong> Create a new product.</p>
-                <h4>Example Request:</h4>
-                <pre>
-POST https://api.example.com/products
-{
-  "name": "New Product",
-  "price": 99.99
-}
-                </pre>
-                <h4>Example Response:</h4>
-                <pre>
-{
-  "id": 3,
-  "name": "New Product",
-  "price": 99.99
-}
-                </pre>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </details>
-    </section>
+        <h2>API Resources</h2>
+           
+        <!-- Organizations Management Group -->
+        <details>
+          <summary>Organizations <span>all company we call organizations</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Users Management Group -->
+        <details>
+          <summary>Users Accounts <span>user account for login</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Permissions Management Group -->
+        <details>
+          <summary>Permissions <span>all permission of the system</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Roles Management Group -->
+        <details>
+          <summary>Roles <span>Roles for the system in the organization</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- User Roles Management Group -->
+        <details>
+          <summary>User Roles <span>each user have different role</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Masters Management Group -->
+        <details>
+          <summary>Masters <span>main device we call master</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Features Management Group -->
+        <details>
+          <summary>Features <span>Stablu service which install in the system and master</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Devices Management Group -->
+        <details>
+          <summary>Devices <span>IoT devices which connected to master and which kind of feature is use for</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Attendances Management Group -->
+        <details>
+          <summary>Attendances <span>all records about staff scan attendances</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Videos Management Group -->
+        <details>
+          <summary>Videos <span>for home solar light with camera security store video location</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Slaves Management Group -->
+        <details>
+          <summary>Slaves <span>IoT device like sensor and mostly run real-time data</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Slaves Data Management Group -->
+        <details>
+          <summary>Slave data <span>Slave data up to date real-time</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Energy Management Group -->
+        <details>
+          <summary>Energy <span>store energy record</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Products Management Group -->
+        <details>
+          <summary>Products <span>for inventory we need to create product for use later</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Stock Management Group -->
+        <details>
+          <summary>Stock <span>inventory summary record how many product leave in stock</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Input Stock Management Group -->
+        <details>
+          <summary>Input Stock <span>record data when input product to inventory/stock</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Output Stock Management Group -->
+        <details>
+          <summary>Output Stock <span>record data when output product from inventory/stock</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Audit Stock Management Group -->
+        <details>
+          <summary>Audit Stock <span>log to see every input/output product</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Refund Budget Management Group -->
+        <details>
+          <summary>Refund Budget <span>record store all refund budget from staff</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Request Leave Management Group -->
+        <details>
+          <summary>Request Leave <span>staff record asking leave</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Request Debt Management Group -->
+        <details>
+          <summary>Request Debt <span>record request everyone related to pay back the debt</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Stock Report Management Group -->
+        <details>
+          <summary>Stock Reports <span>every stock report have been generated we can store it</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Attendance Reports Management Group -->
+        <details>
+          <summary>Attendance reports <span>every attendance report have been generated we can store it</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Sessions Management Group -->
+        <details>
+          <summary>Sessions <span>user login session to keep login session alive</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Refresh Token Management Group -->
+        <details>
+          <summary>Refresh token <span>token for renew sessions</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- User Audit Log Management Group -->
+        <details>
+          <summary>User audit log <span>every user login to the system have been record and some admin activities have been save</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Organization KPIs Management Group -->
+        <details>
+          <summary>Organizations KPIs <span>KPIs value for caculation each company</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <!-- Category Management Group -->
+        <details>
+          <summary>Category <span>category to seperate as group</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary><span class="badge post">POST</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </section>
   </main>
 
   <footer>
-    <p>&copy; 2023 API Documentation</p>
+    <p>&copy; 2025 Stablu. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
