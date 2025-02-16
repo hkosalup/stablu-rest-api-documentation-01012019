@@ -206,3 +206,11 @@ body {
   .bg-color-delete {
     background: #feebec;
   }
+
+  footer {
+    background: #afafaf;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    bottom: 0;
+  }
