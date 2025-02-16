@@ -25,9 +25,37 @@ body {
   
   details {
     margin-bottom: 15px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     border-radius: 4px;
     background: #f9f9f9;
+  }
+
+  .api-details-get {
+    padding: 1px;
+    background: #00bcd4;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .api-details-post {
+    padding: 1px;
+    background: #4caf50;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .api-details-patch {
+    padding: 1px;
+    background: #ff9800;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .api-details-delete {
+    padding: 1px;
+    background: #f44336;
+    border-radius: 4px;
+    margin-top: 10px;
   }
   
   details summary {
@@ -43,7 +71,13 @@ body {
   details summary:hover {
     background: #555;
   }
-  
+
+  details summary span {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-left: 10px;
+  }
+
   details ul {
     list-style: none;
     margin: 0;
@@ -61,14 +95,15 @@ body {
   }
   
   details ul li details summary {
-    background: #007BFF;
-    color: #fff;
+    background: #f9f9f9;
     padding: 10px;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
   }
   
   details ul li details summary:hover {
-    background: #0056b3;
+    background: #f1f1f1;
   }
   
   .api-details {
@@ -86,10 +121,50 @@ body {
     white-space: pre-wrap;
   }
   
-  footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
+  /* Badge Styles */
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
     color: #fff;
-    margin-top: 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .get {
+    background: #00bcd4;
+  }
+  
+  .post {
+    background: #4caf50;
+  }
+  
+  .put {
+    background: #ffc107;
+  }
+  
+  .patch {
+    background: #ff9800;
+  }
+  
+  .delete {
+    background: #f44336;
+  }
+  
+  .options {
+    background: #9c27b0;
+  }
+  
+  .head {
+    background: #3f51b5;
+  }
+
+  .endpoint {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .endpoint-description {
+    color: #333;
   }
