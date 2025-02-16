@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation</title>
+  <link rel="stylesheet" href="next_style.css">
+</head>
+<body>
+  <header>
+    <h1>API Documentation</h1>
+    <p>Explore the APIs below for detailed information.</p>
+  </header>
+
+  <main>
+    <!-- Organizations Section -->
+    <section class="api-section">
+      <details open>
+        <summary>
+          <span class="badge post">POST</span> /organizations
+          <p class="description">Adds an organization to the system.</p>
+        </summary>
+        <div class="api-details">
+          <h3>Description</h3>
+          <p>Adds an organization to the system by its attributes.</p>
+
+          <h3>Parameters</h3>
+          <div class="parameters">
+            <div class="parameter">
+              <div class="parameter-name">body</div>
+              <div class="parameter-type">object</div>
+              <div class="parameter-description">Organization attributes to add</div>
+              <div class="parameter-example">
+                <pre>
+{
+  "id": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+  "name": "Stablu Company",
+  "description": "Stablu is a tech innovation company",
+  "logo": "https://stablu.net/logo.png",
+  "created_at": "2016-08-29T09:12:33.001Z",
+  "updated_at": "2016-08-29T09:12:33.001Z"
+}
+                </pre>
+              </div>
+            </div>
+
+            <div class="parameter">
+              <div class="parameter-name">authentication <span class="required">*</span></div>
+              <div class="parameter-type">string (header)</div>
+              <div class="parameter-description">An authorization header</div>
+              <input type="text" class="parameter-input" placeholder="authentication">
+            </div>
+
+            <div class="parameter">
+              <div class="parameter-name">psk-key <span class="required">*</span></div>
+              <div class="parameter-type">string (header)</div>
+              <div class="parameter-description">A pre-shared key for authorization</div>
+              <input type="text" class="parameter-input" placeholder="psk-key">
+            </div>
+          </div>
+
+          <h3>Responses</h3>
+          <table class="responses-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>201</td>
+                <td>Organization created successfully.</td>
+              </tr>
+              <tr>
+                <td>500</td>
+                <td>Server error.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 API Documentation</p>
+  </footer>
+</body>
+</html>

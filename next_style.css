@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .api-section {
+    margin-bottom: 20px;
+    background: #f0fdf4;
+    border: 1px solid #d4e7d5;
+    border-radius: 4px;
+    padding: 15px;
+  }
+  
+  details {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  details summary {
+    background: #e7f7e9;
+    padding: 15px 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  details summary:hover {
+    background: #d7f0db;
+  }
+  
+  .description {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 10px;
+  }
+  
+  .api-details {
+    padding: 15px;
+    background: #f6fffa;
+    border: 1px solid #d4e7d5;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  .parameters {
+    margin-top: 10px;
+  }
+  
+  .parameter {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+  }
+  
+  .parameter-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .parameter-type {
+    color: #007BFF;
+    margin-right: 10px;
+  }
+  
+  .parameter-description {
+    flex: 1;
+    color: #555;
+  }
+  
+  .parameter-example pre {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+  
+  .parameter-input {
+    margin-top: 5px;
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .required {
+    color: red;
+  }
+  
+  .responses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .responses-table th,
+  .responses-table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .responses-table th {
+    background: #e7f7e9;
+    color: #333;
+  }
+  
+  .responses-table td {
+    background: #f9f9f9;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .post {
+    background: #4caf50;
+  }
+  
+  .get {
+    background: #00bcd4;
+  }
+  
+  .put {
+    background: #ffc107;
+  }
+  
+  .delete {
+    background: #f44336;
+  }
