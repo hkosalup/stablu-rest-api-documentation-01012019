@@ -18,6 +18,7 @@
         <details>
           <summary class="summary">Organizations <span>all company we call organizations</span></summary>
           <ul>
+            <!-- Create an Organization -->
             <li>
               <details class="api-details-post">
                 <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
@@ -26,28 +27,96 @@
                   <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
                   <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>GET https://api.example.com/organizations</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "name": "STABLU",
+  "name_native": "ស្តាប៊្លូ",
+  "description": "this product is master device",
+  "code": "STABLU",
+  "email": "info@stablu.tech",
+  "phone": "0969604049",
+  "admin_lastname": "HING",
+  "admin_firstname": "Kosal",
+  "business_type": "Tech Start-Up",
+  "address": "No. 10, Street 242 Khan Daun Penh, Phnom Penh, Cambodia",
+  "logo": "logo_url",
+  "search_data": "Stablu is a tech start up team. Develop AIoT - SIBMA (Stablu's Intelligent Businesses Management Assistant)",
+  "vision": "Stablu Vission",
+  "mission": "Stablu mission"
+}
+
+Required Parameters:
+- name: string
+- email: string
+- phone: string
+- admin_lastname: string
+- admin_firstname: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "name": "STABLU",
+  "name_native": "ស្តាប៊្លូ",
+  "description": "this product is master device",
+  "code": "STABLU",
+  "email": "info@stablu.tech",
+  "phone": "0969604049",
+  "admin_lastname": "HING",
+  "admin_firstname": "Kosal",
+  "business_type": "Tech Start-Up",
+  "address": "No. 10, Street 242 Khan Daun Penh, Phnom Penh, Cambodia",
+  "logo": "logo_url",
+  "search_data": "Stablu is a tech start up team. Develop AIoT - SIBMA (Stablu's Intelligent Businesses Management Assistant)",
+  "vision": "Stablu Vission",
+  "mission": "Stablu mission",
+  "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27"
+}
                   </pre>
                 </div>
               </details>
             </li>
+            <!-- Get an Organization -->
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id</span><span class="endpoint-description">get an organization</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method: </strong> GET</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id</span></p>
+                  <p><strong>Description:</strong> Retrieve an organization.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com//organizations/:org_id</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+{
+  "data": {
+      "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+      "name": "STABLU",
+      "name_native": "ស្តាប៊្លូ",
+      "description": "this product is master device",
+      "code": "STABLU",
+      "email": "info@stablu.tech",
+      "phone": "0969604049",
+      "admin_lastname": "HING",
+      "admin_firstname": "Kosal",
+      "business_type": "Tech Start-Up",
+      "address": "No. 10, Street 242 Khan Daun Penh, Phnom Penh, Cambodia",
+      "logo": "logo_url",
+      "search_data": "Stablu is a tech start up team. Develop AIoT - SIBMA (Stablu's Intelligent Businesses Management Assistant)",
+      "status": "active",
+      "vision": "Stablu Vission",
+      "mission": "Stablu mission",
+      "created_at": "2025-02-20T11:53:24.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- Get list Organizations -->
             <li>
               <details class="api-details-get">
                 <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
@@ -69,6 +138,7 @@
                 </div>
               </details>
             </li>
+            <!-- Update an Organizations -->
             <li>
               <details class="api-details-patch">
                 <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
@@ -90,6 +160,7 @@
                 </div>
               </details>
             </li>
+            <!-- Delete an Organization -->
             <li>
               <details class="api-details-delete">
                 <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
