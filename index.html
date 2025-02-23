@@ -86,7 +86,7 @@ Required Parameters:
                   <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id</span></p>
                   <p><strong>Description:</strong> Retrieve an organization.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com//organizations/:org_id</pre>
+                  <pre>GET https://api.example.com/organizations/:org_id</pre>
                   <h4>Example Response:</h4>
                   <pre>
 {
@@ -117,7 +117,7 @@ Required Parameters:
               </details>
             </li>
             <!-- Get list Organizations -->
-            <li>
+            <!-- <li>
               <details class="api-details-get">
                 <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-get">
@@ -137,9 +137,9 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
             <!-- Update an Organizations -->
-            <li>
+            <!-- <li>
               <details class="api-details-patch">
                 <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-patch">
@@ -159,9 +159,9 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
             <!-- Delete an Organization -->
-            <li>
+            <!-- <li>
               <details class="api-details-delete">
                 <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-delete">
@@ -186,7 +186,7 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
           </ul>
         </details>
         <!-- Users Management Group -->
@@ -195,56 +195,74 @@ Required Parameters:
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users</span><span class="endpoint-description">create an user account</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/users</span></p>
+                  <p><strong>Description: </strong>Adds an user account to organization by business owner</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>GET https://api.example.com/organizations/:org_id/users</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "username": "admin",
+  "email": "admin@stablu.tech",
+  "password": "123"
+}
+
+Required Parameters:
+- username: string
+- email: string
+- password: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+  "user_id": "ae7d4593-46f2-44e0-93b8-11da51e9f241",
+  "username": "admin",
+  "email": "admin@stablu.tech",
+  "password": "123"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/validate_user_exist</span><span class="endpoint-description">Check exist username or email</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/organizations/:org_id/validate_user_exist</span></p>
+                  <p><strong>Description:</strong> Check exist username or email.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>GET https://api.example.com/organizations/:org_id/validate_user_exist</pre>
                   <h4>Example Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+Query Parameters:
+- username: string
+- email: string
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": {
+      "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+      "user_id": "ae7d4593-46f2-44e0-93b8-11da51e9f241",
+      "username": "admin",
+      "email": "admin@stablu.tech",
+      "is_active": 0,
+      "is_verified": 0,
+      "created_at": "2025-02-23T12:53:57.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
                   </pre>
                 </div>
               </details>
             </li>
-            <li>
+            <!-- <li>
               <details class="api-details-patch">
                 <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-patch">
@@ -290,11 +308,146 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
           </ul>
         </details>
-        <!-- Permissions Management Group -->
+        <!-- Users Profile Management Group -->
         <details>
+          <summary class="summary">Users Profile <span>user general information</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users_profile</span><span class="endpoint-description">create an user profile</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/users_profile</span></p>
+                  <p><strong>Description: </strong>Adds an user profile</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users_profile</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "user_id": "351debbf-0ed9-44cc-8f85-dd8b28ec8be3",
+  "firstname": "Stablu",
+  "lastname": "IoT",
+  "gender": "Other",
+  "position": "CEO",
+  "role": "admin",
+  "avatar": "avatar_url",
+  "dob": "1999-06-07"
+}
+
+Required Parameters:
+- user_id: string
+- firstname: string
+- lastname: string
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+  "user_id": "351debbf-0ed9-44cc-8f85-dd8b28ec8be3",
+  "firstname": "Stablu",
+  "lastname": "IoT",
+  "gender": "Other",
+  "position": "CEO",
+  "role": "admin",
+  "avatar": "avatar_url",
+  "dob": "1999-06-07"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users_profile/:user_id</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/organizations/:org_id/users_profile/:user_id</span></p>
+                  <p><strong>Description:</strong> Retrieve a user profile.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users_profile/:user_id</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+Query Parameters:
+- org_id: string,
+- user_id: string,
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": {
+      "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+      "user_id": "351debbf-0ed9-44cc-8f85-dd8b28ec8be3",
+      "firstname": "Stablu",
+      "lastname": "IoT",
+      "gender": "Other",
+      "position": "CEO",
+      "role": "admin",
+      "avatar": "avatar_url",
+      "dob": "1999-06-07T00:00:00.000Z",
+      "created_at": "2025-02-23T13:04:27.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- <li>
+              <details class="api-details-patch">
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-patch">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-delete">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li> -->
+          </ul>
+        </details>
+        
+        <!-- Permissions Management Group -->
+        <!-- <details>
           <summary class="summary">Permissions <span>all permission of the system</span></summary>
           <ul>
             <li>
@@ -396,9 +549,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Roles Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Roles <span>Roles for the system in the organization</span></summary>
           <ul>
             <li>
@@ -500,9 +653,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- User Roles Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">User Roles <span>each user have different role</span></summary>
           <ul>
             <li>
@@ -604,9 +757,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Masters Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Masters <span>main device we call master</span></summary>
           <ul>
             <li>
@@ -708,9 +861,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Features Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Features <span>Stablu service which install in the system and master</span></summary>
           <ul>
             <li>
@@ -812,9 +965,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Devices Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Devices <span>IoT devices which connected to master and which kind of feature is use for</span></summary>
           <ul>
             <li>
@@ -916,42 +1069,47 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Attendances Management Group -->
         <details>
           <summary class="summary">Attendances <span>all records about staff scan attendances</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users/:user_id/attendances</span><span class="endpoint-description">Scan QR to mark attendance</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/users/:user_id/attendances</span></p>
+                  <p><strong>Description: </strong>Scan QR to mark attendance</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/attendances</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "device_id": "8e99b74f-4301-43ab-accc-beebd9a4af20",
+  "timestamp": "2025-02-23 10:13:26",
+  "qr_text": "text1"
+}
+
+Required Parameters:
+- device_id: string
+- timestamp: string
+- qr_text: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+  "user_id": "351debbf-0ed9-44cc-8f85-dd8b28ec8be3",
+  "device_id": "8e99b74f-4301-43ab-accc-beebd9a4af20",
+  "timestamp": "2025-02-23 10:13:26",
+  "qr_text": "text1"
+}
                   </pre>
                 </div>
               </details>
             </li>
-            <li>
+            <!-- <li>
               <details class="api-details-get">
                 <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-get">
@@ -971,8 +1129,8 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <details class="api-details-patch">
                 <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-patch">
@@ -1018,11 +1176,11 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
           </ul>
         </details>
         <!-- Videos Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Videos <span>for home solar light with camera security store video location</span></summary>
           <ul>
             <li>
@@ -1124,9 +1282,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Slaves Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Slaves <span>IoT device like sensor and mostly run real-time data</span></summary>
           <ul>
             <li>
@@ -1228,9 +1386,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Slaves Data Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Slave data <span>Slave data up to date real-time</span></summary>
           <ul>
             <li>
@@ -1332,9 +1490,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Energy Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Energy <span>store energy record</span></summary>
           <ul>
             <li>
@@ -1436,12 +1594,43 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Products Management Group -->
         <details>
           <summary class="summary">Products <span>for inventory we need to create product for use later</span></summary>
           <ul>
             <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/devices_qr</span><span class="endpoint-description">get list device scan attendance</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/devices_qr</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of devices scan attendance.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/devices_qr</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+Query Parameters:
+- org_id: string
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": [
+      {
+          "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
+          "device_id": "8e99b74f-4301-43ab-accc-beebd9a4af20",
+          "qr_text": "text1",
+          "timestamp": "2025-02-23T11:16:29.000Z"
+      }
+  ],
+  "status": 200
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- <li>
               <details class="api-details-post">
                 <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-post">
@@ -1538,11 +1727,11 @@ Required Parameters:
                   </pre>
                 </div>
               </details>
-            </li>
+            </li> -->
           </ul>
         </details>
         <!-- Stock Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Stock <span>inventory summary record how many product leave in stock</span></summary>
           <ul>
             <li>
@@ -1644,9 +1833,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Input Stock Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Input Stock <span>record data when input product to inventory/stock</span></summary>
           <ul>
             <li>
@@ -1748,9 +1937,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Output Stock Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Output Stock <span>record data when output product from inventory/stock</span></summary>
           <ul>
             <li>
@@ -1852,9 +2041,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Audit Stock Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Audit Stock <span>log to see every input/output product</span></summary>
           <ul>
             <li>
@@ -1956,9 +2145,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Refund Budget Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Refund Budget <span>record store all refund budget from staff</span></summary>
           <ul>
             <li>
@@ -2060,9 +2249,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Request Leave Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Request Leave <span>staff record asking leave</span></summary>
           <ul>
             <li>
@@ -2164,9 +2353,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Request Debt Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Request Debt <span>record request everyone related to pay back the debt</span></summary>
           <ul>
             <li>
@@ -2268,9 +2457,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Stock Report Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Stock Reports <span>every stock report have been generated we can store it</span></summary>
           <ul>
             <li>
@@ -2372,9 +2561,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Attendance Reports Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Attendance reports <span>every attendance report have been generated we can store it</span></summary>
           <ul>
             <li>
@@ -2476,9 +2665,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Sessions Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Sessions <span>user login session to keep login session alive</span></summary>
           <ul>
             <li>
@@ -2580,9 +2769,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Refresh Token Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Refresh token <span>token for renew sessions</span></summary>
           <ul>
             <li>
@@ -2684,9 +2873,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- User Audit Log Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">User audit log <span>every user login to the system have been record and some admin activities have been save</span></summary>
           <ul>
             <li>
@@ -2788,9 +2977,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Organization KPIs Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Organizations KPIs <span>KPIs value for caculation each company</span></summary>
           <ul>
             <li>
@@ -2892,9 +3081,9 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Category Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Category <span>category to seperate as group</span></summary>
           <ul>
             <li>
@@ -2996,7 +3185,7 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details>
+        </details> -->
       </section>
   </main>
 
