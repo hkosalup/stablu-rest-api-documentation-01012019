@@ -87,7 +87,7 @@ Required Parameters:
                   <p><strong>Description:</strong> Retrieve an organization.</p>
                   <h4>Example Request:</h4>
                   <pre>GET https://api.example.com/organizations/:org_id</pre>
-                  <h4>Example Response:</h4>
+                  <h4>Response:</h4>
                   <pre>
 {
   "data": {
@@ -113,80 +113,146 @@ Required Parameters:
   "status": 200
 }
                   </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Organization not exist"
+}
+                  </pre>
                 </div>
               </details>
             </li>
             <!-- Get list Organizations -->
-            <!-- <li>
+            <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations</span><span class="endpoint-description">get list organizations</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of organizations.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": [
+    {
+      "org_id": "0df77f76-dc59-4045-ac61-e7a5cba59ba0",
+      "name": "TELA1",
+      "name_native": "តេលា",
+      "description": "this is organization description",
+      "code": "TELA1",
+      "email": "tela1@stablu.tech",
+      "phone": "0969604046",
+      "admin_lastname": "SOPHEAK",
+      "admin_firstname": "Phivath",
+      "business_type": "Tech Company",
+      "address": "No. 10, Street 242 Khan Daun Penh, Phnom Penh, Cambodia",
+      "logo": "logo_url",
+      "search_data": "TELA is a tech Company.",
+      "status": "active",
+      "vision": "TELA Vission",
+      "mission": "TELA mission",
+      "created_at": "2025-03-02T07:37:57.000Z",
+      "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Organizations not exist"
+}
                   </pre>
                 </div>
               </details>
-            </li> -->
+            </li>
             <!-- Update an Organizations -->
-            <!-- <li>
+            <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id</span><span class="endpoint-description">update an organization</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id</span></p>
+                  <p><strong>Description:</strong> update organization.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "name": "TELA Update",
+  "name_native": "តេលា update",
+  "description": "this is organization description update",
+  "code": "TELA_UPDATE",
+  "email": "tela_update@stablu.tech",
+  "phone": "0969604040",
+  "admin_lastname": "SOPHEAK_UPDATE",
+  "admin_firstname": "Phivath_Update",
+  "business_type": "Tech Company Update",
+  "address": "No. 10, Street 242 Khan Daun Penh, Phnom Penh, Cambodia Update",
+  "logo": "logo_url_update",
+  "search_data": "TELA is a tech Company.Update",
+  "vision": "TELA Vission Update",
+  "mission": "TELA mission Update"
+}
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "organization updated successfully!"
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "status": 404,
+  "message": "Organization not exist"
+}
                   </pre>
                 </div>
               </details>
-            </li> -->
+            </li>
             <!-- Delete an Organization -->
-            <!-- <li>
+            <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id</span><span class="endpoint-description">delete an organization</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id</span></p>
+                  <p><strong>Description:</strong> Delete a new organization.</p>
                   <h4>Example Request:</h4>
-                  <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
+                  <pre>DELETE https://api.example.com/organizations/:org_id</pre>
                   <h4>Example Response:</h4>
                   <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  status: 200,
+  message: "Permission delete successfully!"
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "status": 404,
+  "message": "Organization not exist"
+}
+                  </pre>
+                  <h4>Error:</h4>
+                  <pre>
+{
+  status: 400,
+  message: "Permission delete fail!"
+}
                   </pre>
                 </div>
               </details>
-            </li> -->
+            </li>
           </ul>
         </details>
         <!-- Users Management Group -->
