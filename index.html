@@ -259,6 +259,7 @@ Required Parameters:
         <details>
           <summary class="summary">Users Accounts <span>user account for login</span></summary>
           <ul>
+            <!-- create an user account -->
             <li>
               <details class="api-details-post">
                 <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users</span><span class="endpoint-description">create an user account</span></summary>
@@ -267,7 +268,7 @@ Required Parameters:
                   <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/users</span></p>
                   <p><strong>Description: </strong>Adds an user account to organization by business owner</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/organizations/:org_id/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/users</pre>
                   <h4>Parameters:</h4>
                   <pre>
 {
@@ -291,9 +292,25 @@ Required Parameters:
   "password": "123"
 }
                   </pre>
+                  <h4>Create Fail:</h4>
+                  <pre>
+{
+  "status": 500, 
+  "message": "Failed to create users account"
+}
+                  </pre>
+                  <h4>Conflict Error:</h4>
+                  <pre>
+{
+  "status": "fail",
+  "statusCode": 409,
+  "message": "Username or Email already exists"
+}
+                  </pre>
                 </div>
               </details>
             </li>
+            <!-- Get an User Account validate -->
             <li>
               <details class="api-details-get">
                 <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/validate_user_exist</span><span class="endpoint-description">Check exist username or email</span></summary>
@@ -303,9 +320,8 @@ Required Parameters:
                   <p><strong>Description:</strong> Check exist username or email.</p>
                   <h4>Example Request:</h4>
                   <pre>GET https://api.example.com/organizations/:org_id/validate_user_exist</pre>
-                  <h4>Example Response:</h4>
+                  <h4>Query Params:</h4>
                   <pre>
-Query Parameters:
 - username: string
 - email: string
                   </pre>
@@ -325,56 +341,161 @@ Query Parameters:
   "status": 200
 }
                   </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "User account not exist!"
+}
+                  </pre>
                 </div>
               </details>
             </li>
-            <!-- <li>
+            <!-- Get an User Account -->
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id</span><span class="endpoint-description">Get an user by id</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id</span></p>
+                  <p><strong>Description:</strong> Get a user by id.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id</pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": {
+    "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+    "user_id": "13b83813-33c7-42a3-912b-0718f22e38d1",
+    "username": "supper_admin_update",
+    "email": "supper_admin_update@stablu.tech",
+    "is_active": 1,
+    "is_verified": 0,
+    "created_at": "2025-02-27T08:24:49.000Z",
+    "updated_at": "2025-02-27T08:46:48.000Z"
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "User account not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- Get List User Account -->
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users</span><span class="endpoint-description">Get list users</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users</span></p>
+                  <p><strong>Description:</strong> Get list users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users</pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": [
+    {
+        "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+        "user_id": "13b83813-33c7-42a3-912b-0718f22e38d1",
+        "username": "supper_admin_update",
+        "email": "supper_admin_update@stablu.tech",
+        "is_active": 1,
+        "is_verified": 0,
+        "created_at": "2025-02-27T08:24:49.000Z",
+        "updated_at": "2025-02-27T08:46:48.000Z"
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "User account not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- Update an User Account -->
+            <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/users/:user_id</span><span class="endpoint-description">update an user</span></summary>
                 <div class="api-details bg-color-patch">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id</span></p>
+                  <p><strong>Description:</strong> Update a user.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/users/:user_id</pre>
                   <h4>Example Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "status": 200,
+  "message": "user updated successfully!"
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "status": 404,
+  "message": "user account not exist"
+}
+                  </pre>
+                  <h4>Update Fail:</h4>
+                  <pre>
+{
+  "status": 400,
+  "message": "user updated fail!"
+}
                   </pre>
                 </div>
               </details>
             </li>
+            <!-- Delete an User Account -->
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/users/:user_id</span><span class="endpoint-description">delete an organization</span></summary>
                 <div class="api-details bg-color-delete">
                   <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id</span></p>
                   <p><strong>Description:</strong> Create a new user.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/users/:user_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "User delete successfully!"
+}
                   </pre>
-                  <h4>Example Response:</h4>
+                  <h4>Not Found:</h4>
                   <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 404,
+  "message": "User not exist!"
+}
+                  </pre>
+                  <h4>Update Fail:</h4>
+                  <pre>
+{
+  "status": 400,
+  "message": "User delete fail!"
+}
                   </pre>
                 </div>
               </details>
-            </li> -->
+            </li>
           </ul>
         </details>
         <!-- Users Profile Management Group -->
@@ -511,7 +632,6 @@ Query Parameters:
             </li> -->
           </ul>
         </details>
-        
         <!-- Permissions Management Group -->
         <!-- <details>
           <summary class="summary">Permissions <span>all permission of the system</span></summary>
@@ -3149,6 +3269,110 @@ Query Parameters:
           </ul>
         </details> -->
         <!-- Category Management Group -->
+        <!-- <details>
+          <summary class="summary">Category <span>category to seperate as group</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
+                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-patch">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/users</pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "users": [
+                        { "id": 1, "name": "John Doe" },
+                        { "id": 2, "name": "Jane Smith" }
+                      ]
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <div class="api-details bg-color-delete">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
+                  <p><strong>Description:</strong> Create a new user.</p>
+                  <h4>Example Request:</h4>
+                  <pre>
+                    POST https://api.example.com/users
+                    {
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                  <h4>Example Response:</h4>
+                  <pre>
+                    {
+                      "id": 3,
+                      "name": "New User",
+                      "email": "newuser@example.com"
+                    }
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details> -->
+        <!-- Adaptive Report -->
         <!-- <details>
           <summary class="summary">Category <span>category to seperate as group</span></summary>
           <ul>
