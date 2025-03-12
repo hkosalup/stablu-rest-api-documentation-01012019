@@ -1650,109 +1650,205 @@ Required Parameters:
           </ul>
         </details>
         <!-- Devices Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Devices <span>IoT devices which connected to master and which kind of feature is use for</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices</span><span class="endpoint-description">create a device</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices</span></p>
+                  <p><strong>Description: </strong> Create a device</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/masters/:master_id/devices</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "feature_id": "06f9e1a2-5c3a-4985-9619-6fb011d59567",
+  "name": "Smart-Alarm",
+  "description": "this product is master device",
+  "version": "1.0.0",
+  "model": "1.1.1"
+}
+
+Required Parameters:
+- name: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+  "device_id": "8c5ec62f-84cc-42f3-a9b2-b9ca9671071d",
+  "feature_id": "06f9e1a2-5c3a-4985-9619-6fb011d59567",
+  "name": "Smart-Alarm",
+  "description": "this product is master device",
+  "version": "1.0.0",
+  "model": "1.1.1"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id</span><span class="endpoint-description">get a device</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id</span></p>
+                  <p><strong>Description:</strong> Get a device.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "device_id": "9f12b03f-2a21-426b-a377-4ea388d956a4",
+      "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+      "feature_id": "06f9e1a2-5c3a-4985-9619-6fb011d59567",
+      "name": "Smart-Alarm",
+      "description": "this product is master device",
+      "is_active": 1,
+      "version": "1.0.0",
+      "model": "1.1.1",
+      "created_at": "2025-03-12T10:30:04.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Device not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices</span><span class="endpoint-description">get list devices</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices</span></p>
+                  <p><strong>Description:</strong> Get list devices.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/devices</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [
+      {
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "device_id": "8c5ec62f-84cc-42f3-a9b2-b9ca9671071d",
+          "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+          "feature_id": "06f9e1a2-5c3a-4985-9619-6fb011d59567",
+          "name": "Smart-Alarm",
+          "description": "this product is master device",
+          "is_active": 1,
+          "version": "1.0.0",
+          "model": "1.1.1",
+          "created_at": "2025-03-12T10:25:09.000Z",
+          "updated_at": null
+      }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Devices not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/devices_qr</span><span class="endpoint-description">get list device scan attendance</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/devices_qr</span></p>
+                  <p><strong>Description:</strong> Retrieve a list of devices scan attendance.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/devices_qr</pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "data": [
+      {
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "device_id": "8c5ec62f-84cc-42f3-a9b2-b9ca9671071d",
+          "unique_id": "uniquId123",
+          "timestamp": "2025-03-02T08:59:54.000Z",
+          "is_active": 1
+      }
+  ],
+  "status": 200
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id</span><span class="endpoint-description">update a device</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id</span></p>
+                  <p><strong>Description:</strong> Update a device.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "feature_id": "06f9e1a2-5c3a-4985-9619-6fb011d59567",
+  "name": "STABLU Update",
+  "description": "this product is master device Update",
+  "version": "1.0.1",
+  "model": "1.1.2",
+  "is_active": 1
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Device updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id</span><span class="endpoint-description">delete a device</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id</span></p>
+                  <p><strong>Description:</strong> Delete a device.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Device delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Attendances Management Group -->
         <details>
           <summary class="summary">Attendances <span>all records about staff scan attendances</span></summary>
@@ -2279,7 +2375,7 @@ Required Parameters:
           </ul>
         </details> -->
         <!-- Products Management Group -->
-        <details>
+        <!-- <details>
           <summary class="summary">Products <span>for inventory we need to create product for use later</span></summary>
           <ul>
             <li>
@@ -2313,7 +2409,7 @@ Query Parameters:
                 </div>
               </details>
             </li>
-            <!-- <li>
+            <li>
               <details class="api-details-post">
                 <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
                 <div class="api-details bg-color-post">
@@ -2410,9 +2506,9 @@ Query Parameters:
                   </pre>
                 </div>
               </details>
-            </li> -->
+            </li>
           </ul>
-        </details>
+        </details> -->
         <!-- Stock Management Group -->
         <!-- <details>
           <summary class="summary">Stock <span>inventory summary record how many product leave in stock</span></summary>
