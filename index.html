@@ -1493,109 +1493,162 @@ Required Parameters:
           </ul>
         </details>
         <!-- Features Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Features <span>Stablu service which install in the system and master</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/masters/:master_id/features</span><span class="endpoint-description">create a feature</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/features</span></p>
+                  <p><strong>Description: </strong> Create a feature</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/masters/:master_id/features</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "name": "Stock Management System",
+  "description": "This is security"
+}
+
+Required Parameters:
+- name: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "feature_id": "4cd39df6-eb78-4156-b131-3d20d3364899",
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+  "name": "Stock Management System",
+  "description": "This is security"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/features/feature_id</span><span class="endpoint-description">get a feature</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/features/feature_id</span></p>
+                  <p><strong>Description:</strong> Get a feature.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/features/feature_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "feature_id": "4cd39df6-eb78-4156-b131-3d20d3364899",
+      "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+      "name": "Stock Management System",
+      "description": "This is security",
+      "is_active": 1,
+      "created_at": "2025-03-12T10:10:08.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Feature not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/features</span><span class="endpoint-description">get list features</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/features</span></p>
+                  <p><strong>Description:</strong> Get list features.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/features</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [
+      {
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "feature_id": "4cd39df6-eb78-4156-b131-3d20d3364899",
+          "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+          "name": "Stock Management System",
+          "description": "This is security",
+          "is_active": 1,
+          "created_at": "2025-03-12T10:10:08.000Z",
+          "updated_at": null
+      }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Feature not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/masters/:master_id/features/feature_id</span><span class="endpoint-description">update a feature</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/features/feature_id</span></p>
+                  <p><strong>Description:</strong> Get list feature.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/masters/:master_id/features/feature_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "name": "Stock Management System Update",
+  "description": "This is security Update"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Feature updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/masters/:master_id/features/feature_id</span><span class="endpoint-description">delete a feature</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/features/feature_id</span></p>
+                  <p><strong>Description:</strong> Delete a feature.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/masters/:master_id/features/feature_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Features delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Devices Management Group -->
         <!-- <details>
           <summary class="summary">Devices <span>IoT devices which connected to master and which kind of feature is use for</span></summary>
