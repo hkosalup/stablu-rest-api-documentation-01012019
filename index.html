@@ -1849,6 +1849,182 @@ Required Parameters:
             </li>
           </ul>
         </details>
+        <!-- Slaves Management Group -->
+        <details>
+          <summary class="summary">Slaves <span>Slave is all periperal of device</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id/slaves</span><span class="endpoint-description">create a slave</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id/slaves</span></p>
+                  <p><strong>Description: </strong> Create a slave</p>
+                  <h4>Example Request:</h4>
+                  <pre>POST https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id/slaves</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "name": "Door Detector",
+  "description": "this is the door detector",
+  "type": "This is type",
+  "version": "1.0.0",
+  "model": "1.1.1"
+}
+
+Required Parameters:
+- name: string
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+  "device_id": "43670e47-20c1-49ce-bfbf-8c681b65bbec",
+  "slave_id": "e3f158db-fbd9-417b-a7a7-0e07fa3cd356",
+  "name": "Door Detector",
+  "description": "this is the door detector",
+  "type": "This is type",
+  "version": "1.0.0",
+  "model": "1.1.1"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span><span class="endpoint-description">get a slave</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span></p>
+                  <p><strong>Description:</strong> Get a slave.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": {
+      "slave_id": "e3f158db-fbd9-417b-a7a7-0e07fa3cd356",
+      "device_id": "43670e47-20c1-49ce-bfbf-8c681b65bbec",
+      "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "name": "Door Detector",
+      "description": "this is the door detector",
+      "is_active": 1,
+      "type": "This is type",
+      "version": "1.0.0",
+      "model": "1.1.1",
+      "created_at": "2025-03-12T10:47:19.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Slave not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id/slaves</span><span class="endpoint-description">get list slaves</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id/slaves</span></p>
+                  <p><strong>Description:</strong> Get list slaves.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id/slaves</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [
+      {
+          "slave_id": "e3f158db-fbd9-417b-a7a7-0e07fa3cd356",
+          "device_id": "43670e47-20c1-49ce-bfbf-8c681b65bbec",
+          "master_id": "d08edf5a-e7d5-43af-ab54-3bf7c20220e4",
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "name": "Door Detector",
+          "description": "this is the door detector",
+          "is_active": 1,
+          "type": "This is type",
+          "version": "1.0.0",
+          "model": "1.1.1",
+          "created_at": "2025-03-12T10:47:19.000Z",
+          "updated_at": null
+      }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Slaves not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span><span class="endpoint-description">update a slave</span></summary>
+                <div class="api-details bg-color-patch">
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span></p>
+                  <p><strong>Description:</strong> Update a slave.</p>
+                  <h4>Example Request:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "name": "Door Detector Update",
+  "description": "this is the door detector Update",
+  "type": "This is type Update",
+  "version": "1.0.1",
+  "model": "1.1.2",
+  "is_active": 1
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Slave updated successfully!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span><span class="endpoint-description">delete a slave</span></summary>
+                <div class="api-details bg-color-delete">
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</span></p>
+                  <p><strong>Description:</strong> Delete a slave.</p>
+                  <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/masters/:master_id/devices/:device_id/slaves/:slave_id</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Slave delete successfully!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
         <!-- Attendances Management Group -->
         <details>
           <summary class="summary">Attendances <span>all records about staff scan attendances</span></summary>
