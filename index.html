@@ -2790,109 +2790,113 @@ Required Parameters:
           </ul>
         </details>
         <!-- Input Stock Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Input Stock <span>record data when input product to inventory/stock</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/input_stocks</span><span class="endpoint-description">create a input stock</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/input_stocks</span></p>
+                  <p><strong>Description: </strong> Add product to stock</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/input_stocks</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "product_id": "1399fcd1-83d7-4a65-9c50-1ad74921a906",
+  "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "quantity": 10
+}
+
+Required Parameters:
+- product_id: string
+- user_id: string
+- quantity: number
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "status": 200,
+  "message": "Input Stock updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/input_stocks/:input_stock_id</span><span class="endpoint-description">get a input stock</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/input_stocks/:input_stock_id</span></p>
+                  <p><strong>Description:</strong> Get a input stock.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/input_stocks/:input_stock_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "input_stock_id": 13,
+      "product_id": "b2eff274-7d5d-4c08-a37a-981937a4dd61",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "quantity": 10,
+      "timestamp": "2025-03-12T15:07:51.000Z"
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Fount:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Input Stock not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
-              <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-patch">
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/input_stocks</span><span class="endpoint-description">get list input stock</span></summary>
+                <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/input_stocks</span></p>
+                  <p><strong>Description:</strong> Get list input stock.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/input_stocks</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": [
+      {
+          "input_stock_id": 4,
+          "product_id": "b2eff274-7d5d-4c08-a37a-981937a4dd61",
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "user_id": "df868db8-9940-476f-bc95-a7295b6c1a09",
+          "quantity": 10,
+          "timestamp": "2025-02-28T06:43:37.000Z"
+      }
+  ],
+  "status": 200
+}
                   </pre>
-                </div>
-              </details>
-            </li>
-            <li>
-              <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
-                  <h4>Example Request:</h4>
+                  <h4>Not Fount:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "data": [],
+  "status": 404,
+  "message": "Input Stocks not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Output Stock Management Group -->
         <!-- <details>
           <summary class="summary">Output Stock <span>record data when output product from inventory/stock</span></summary>
