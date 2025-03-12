@@ -2244,110 +2244,6 @@ Required Parameters:
             </li>
           </ul>
         </details> -->
-        <!-- Slaves Management Group -->
-        <!-- <details>
-          <summary class="summary">Slaves <span>IoT device like sensor and mostly run real-time data</span></summary>
-          <ul>
-            <li>
-              <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
-                  <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Parameters:</h4>
-                  <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
-                  </pre>
-                  <h4>Responses:</h4>
-                  <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
-                  </pre>
-                </div>
-              </details>
-            </li>
-            <li>
-              <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-get">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
-                  <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
-                  </pre>
-                </div>
-              </details>
-            </li>
-            <li>
-              <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
-                  <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
-                  </pre>
-                </div>
-              </details>
-            </li>
-            <li>
-              <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
-                  <h4>Example Request:</h4>
-                  <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                </div>
-              </details>
-            </li>
-          </ul>
-        </details> -->
         <!-- Slaves Data Management Group -->
         <!-- <details>
           <summary class="summary">Slave data <span>Slave data up to date real-time</span></summary>
@@ -2557,140 +2453,187 @@ Required Parameters:
           </ul>
         </details> -->
         <!-- Products Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Products <span>for inventory we need to create product for use later</span></summary>
           <ul>
             <li>
-              <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/devices_qr</span><span class="endpoint-description">get list device scan attendance</span></summary>
-                <div class="api-details bg-color-get">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations/:org_id/devices_qr</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of devices scan attendance.</p>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/products</span><span class="endpoint-description">create a product</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/products</span></p>
+                  <p><strong>Description:</strong> Create a device.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/organizations/:org_id/devices_qr</pre>
-                  <h4>Example Response:</h4>
+                  <pre>POST https://api.example.com/organizations/:org_id/products</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-Query Parameters:
-- org_id: string
+{
+  "product_name": "ProductB",
+  "description": "ProductB description",
+  "unique_code": "PROD_B",
+  "category_id": "{{CATEGORY_ID}}",
+  "price": 123,
+  "picture": "https://picture_url.png"
+}
+
+Required Parameters:
+- product_name: string
+- unique_code: string
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
 {
-  "data": [
-      {
-          "org_id": "8e99b74f-4301-43ab-accc-beebd9a4af27",
-          "device_id": "8e99b74f-4301-43ab-accc-beebd9a4af20",
-          "qr_text": "text1",
-          "timestamp": "2025-02-23T11:16:29.000Z"
-      }
-  ],
-  "status": 200
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "product_id": "2f97c736-70be-4ec4-93ec-d9ae0499ace7",
+  "product_name": "ProductB",
+  "description": "ProductB description",
+  "unique_code": "PROD_B",
+  "category_id": "25728113-0a76-4233-ab2c-ca1d6e5b0074",
+  "price": 123,
+  "picture": "https://picture_url.png"
+}
+                  </pre>
+                  <h4>Conflict Error:</h4>
+                  <pre>
+{
+  "status": 409,
+  "message": "Product already exists"
 }
                   </pre>
                 </div>
               </details>
             </li>
             <li>
-              <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
-                <div class="api-details bg-color-post">
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/products/:product_id</span><span class="endpoint-description">get a product</span></summary>
+                <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/products/:product_id</span></p>
+                  <p><strong>Description: </strong> Get a product</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Parameters:</h4>
-                  <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
-                  </pre>
+                  <pre>GET https://api.example.com/organizations/:org_id/products/:product_id</pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "product_id": "830dd01b-933e-4753-be57-d5bfb295eaa5",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "product_name": "ProductB",
+      "description": "ProductB description",
+      "unique_code": "PROD_C",
+      "category_id": "25728113-0a76-4233-ab2c-ca1d6e5b0074",
+      "price": 123,
+      "picture": "https://picture_url.png",
+      "status": 1,
+      "created_at": "2025-03-12T14:35:22.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Product not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/products</span><span class="endpoint-description">get list products</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/products</span></p>
+                  <p><strong>Description:</strong> Get list products.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/products</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": [
+      {
+          "product_id": "2f97c736-70be-4ec4-93ec-d9ae0499ace7",
+          "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+          "product_name": "ProductB",
+          "description": "ProductB description",
+          "unique_code": "PROD_B",
+          "category_id": "25728113-0a76-4233-ab2c-ca1d6e5b0074",
+          "price": 123,
+          "picture": "https://picture_url.png",
+          "status": 1,
+          "created_at": "2025-03-12T14:33:26.000Z",
+          "updated_at": null
+      }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Products not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/products/:product_id</span><span class="endpoint-description">update a product</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/products/:product_id</span></p>
+                  <p><strong>Description:</strong> Get list products.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/products/:product_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "product_name": "ProductB Update",
+  "description": "ProductB description Update",
+  "unique_code": "PROD_B_Update",
+  "category_id": "{{CATEGORY_ID}}",
+  "price": 444,
+  "picture": "https://picture_url.png Update"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Product updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/products/:product_id</span><span class="endpoint-description">delete a product</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/products/:product_id</span></p>
+                  <p><strong>Description:</strong> Delete a product.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/products/:product_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Product delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Stock Management Group -->
         <!-- <details>
           <summary class="summary">Stock <span>inventory summary record how many product leave in stock</span></summary>
