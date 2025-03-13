@@ -4602,56 +4602,95 @@ Required Parameters:
           </ul>
         </details>
         <!-- Adaptive Report -->
-        <!-- <details>
-          <summary class="summary">Category <span>category to seperate as group</span></summary>
+        <details>
+          <summary class="summary">Adaptive <span>Adaptive report using AI generater</span></summary>
           <ul>
+            <!-- Create a question-->
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/questions</span><span class="endpoint-description">create a question</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/questions</span></p>
+                  <p><strong>Description: </strong> Create a quesiton</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/questions</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "question": "Generate me staff January report"
+}
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "question": "Generate me staff January report",
+  "subject_id": "a804fce2-83e8-468a-8b93-4047ea0d5517",
+  "question_id": "2e969cce-a88a-4425-9ac7-cbae8d07ad2e"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <!-- Create a question with subject exist-->
+            <li>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/questions</span><span class="endpoint-description">create a question with exist subject</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/questions</span></p>
+                  <p><strong>Description: </strong> Create a quesiton with exist subject</p>
+                  <h4>Example Request:</h4>
+                  <pre>POST https://api.example.com/organizations/:org_id/questions</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "subject_id": "a804fce2-83e8-468a-8b93-4047ea0d5517",
+  "question": "Generate me staff January report"
+}
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "question": "Generate me staff January report",
+  "subject_id": "a804fce2-83e8-468a-8b93-4047ea0d5517",
+  "question_id": "2e969cce-a88a-4425-9ac7-cbae8d07ad2e"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/questions/:question_id/answers</span><span class="endpoint-description">Get a question's answer</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/questions</span></p>
+                  <p><strong>Description:</strong> Get a question's answer.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/questions</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "answer_id": "0bbc0ed0-495d-47b0-95f4-921561b2368d",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "question_id": "050d29bb-41ca-4256-b2d1-e202aec0e02b",
+      "answer": "Based on the provided SQL query and response, here's how I would structure the output:\r\n \r\nExecutive Summary:\r\nThe database contains records for 10 users from different countries.\r\n \r\nData Summary & Breakdown:\r\n \r\n| User ID | Username | Country |\r\n| --- | --- | --- |\r\n| 1 | sor_hokly | Thailand |\r\n| 2 | soun_dalin | Vietnam |\r\n| 3 | hing_kosal | Cambodia |\r\n| 4 | audry_kazembola | Laos |\r\n| 5 | phon_veasna | Myanmar |\r\n| 6 | chhorn_channa | Laos |\r\n| 7 | vann_leapheng | Thailand |\r\n| 8 | sor_senghour | Vietnam |\r\n| 9 | sopheak_phivath | Cambodia |\r\n| 10 | angkhea_vothana | Thailand |\r\n \r\nRecommendations:\r\nBased on the data, it appears that all users are from Southeast Asia. To improve user experience and engagement, consider adding more diverse countries or regions to cater to a broader audience.\r\n \r\nHere's an example of how you could format this output in three sections:\r\n \r\nExecutive Summary:\r\nThe database contains records for 10 users from different countries.\r\n \r\n| User ID | Username | Country |\r\n| --- | --- | --- |\r\n| 1 | sor_hokly | Thailand |\r\n| 2 | soun_dalin | Vietnam |\r\n| 3 | hing_kosal | Cambodia |\r\n| 4 | audry_kazembola | Laos |\r\n| 5 | phon_veasna | Myanmar |\r\n| 6 | chhorn_channa | Laos |\r\n| 7 | vann_leapheng | Thailand |\r\n| 8 | sor_senghour | Vietnam |\r\n| 9 | sopheak_phivath | Cambodia |\r\n| 10 | angkhea_vothana | Thailand |\r\n \r\nData Summary & Breakdown:\r\n| User ID | Username | Country |\r\n| --- | --- | --- |\r\n| 1 | sor_hokly | Thailand |\r\n| 2 | soun_dalin | Vietnam |\r\n| 3 | hing_kosal | Cambodia |\r\n| 4 | audry_kazembola | Laos |\r\n| 5 | phon_veasna | Myanmar |\r\n| 6 | chhorn_channa | Laos |\r\n| 7 | vann_leapheng | Thailand |\r\n| 8 | sor_senghour | Vietnam |\r\n| 9 | sopheak_phivath | Cambodia |\r\n| 10 | angkhea_vothana | Thailand |\r\n \r\nRecommendations:\r\nBased on the data, it appears that all users are from Southeast Asia. To improve user experience and engagement, consider adding more diverse countries or regions to cater to a broader audience.\r\n \r\nThis output provides a clear summary of the data, breaks down the results into a table format with a short analysis, and offers recommendations based on..",
+      "created_at": "2025-03-09T10:24:00.000Z"
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Answer not exist!"
+}
                   </pre>
                 </div>
               </details>
@@ -4704,7 +4743,7 @@ Required Parameters:
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
       </section>
   </main>
 
