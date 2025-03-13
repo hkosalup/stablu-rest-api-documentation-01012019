@@ -4299,109 +4299,164 @@ Required Parameters:
           </ul>
         </details> -->
         <!-- Organization KPIs Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Organizations KPIs <span>KPIs value for caculation each company</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/kpis</span><span class="endpoint-description">create an kpi</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/kpis</span></p>
                   <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/kpis</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "kpi_name": "total_attendance",
+  "description": "Total Attendance",
+  "is_active": 1,
+  "kpi_values": "55"
+}
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "kpi_id": "b3d50efd-19cc-460a-bc1d-21577e89b813",
+  "kpi_name": "total_attendance",
+  "description": "Total Attendance",
+  "is_active": 1,
+  "kpi_values": "55"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/kpis/:kpi_id</span><span class="endpoint-description">get an kpi</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/kpis/:kpi_id</span></p>
+                  <p><strong>Description:</strong> Get a kpi.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/kpis/:kpi_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "kpi_id": "b3d50efd-19cc-460a-bc1d-21577e89b813",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "kpi_name": "total_attendance",
+      "description": "Total Attendance",
+      "is_active": 1,
+      "kpi_values": "55",
+      "created_at": "2025-03-13T08:22:11.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "KPI not found!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/kpis</span><span class="endpoint-description">get list kpis</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/kpis</span></p>
+                  <p><strong>Description:</strong> Get list kpis.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/kpis</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [
+    {
+      "kpi_id": "b3d50efd-19cc-460a-bc1d-21577e89b813",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "kpi_name": "total_attendance",
+      "description": "Total Attendance",
+      "is_active": 1,
+      "kpi_values": "55",
+      "created_at": "2025-03-13T08:22:11.000Z",
+      "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "KPIs not found!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/kpis/:kpi_id</span><span class="endpoint-description">update a kpi</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/kpis/:kpi_id</span></p>
+                  <p><strong>Description:</strong> Update a kpi.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/kpis/:kpi_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "kpi_name": "total_attendance_update",
+  "description": "Total Attendance Update",
+  "is_active": 0,
+  "kpi_values": "111"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "KPI updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/kpis/:kpi_id</span><span class="endpoint-description">delete a kpi</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/kpis/:kpi_id</span></p>
+                  <p><strong>Description:</strong> Delete a kpi.</p>
                   <h4>Example Request:</h4>
-                  <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/kpis/:kpi_id</pre>
                   <h4>Example Response:</h4>
                   <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "KPI delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Category Management Group -->
         <!-- <details>
           <summary class="summary">Category <span>category to seperate as group</span></summary>
