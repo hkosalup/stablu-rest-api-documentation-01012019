@@ -3110,317 +3110,674 @@ Required Parameters:
           </ul>
         </details> -->
         <!-- Refund Budget Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Refund Budget <span>record store all refund budget from staff</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users/:user_id/refunds</span><span class="endpoint-description">create a refund</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/users/:user_id/refunds</span></p>
+                  <p><strong>Description: </strong> Create a refund</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/users/:user_id/refunds</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "amount": "100",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "refund_id": "74821529-2063-4973-a26e-9f5d70e73b4a",
+  "status": "pending",
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "amount": "100",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/refunds/:refund_id</span><span class="endpoint-description">get a refund</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/refunds/:refund_id</span></p>
+                  <p><strong>Description:</strong> Get a refund.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/refunds/:refund_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "refund_id": "74821529-2063-4973-a26e-9f5d70e73b4a",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "amount": 100,
+      "reason": "this is reason",
+      "attached": "this is attached file",
+      "status": "pending",
+      "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "created_at": "2025-03-13T07:38:26.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Refund not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/refunds</span><span class="endpoint-description">get list refund</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/refunds</span></p>
+                  <p><strong>Description:</strong> Get list refund.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/refunds</pre>
+                  <h4>Query Params:</h4>
+                  <pre>
+- user_id: string
+- status: string
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [ 
+    {
+        "refund_id": "74821529-2063-4973-a26e-9f5d70e73b4a",
+        "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+        "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+        "amount": 100,
+        "reason": "this is reason",
+        "attached": "this is attached file",
+        "status": "pending",
+        "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+        "created_at": "2025-03-13T07:38:26.000Z",
+        "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Refunds not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/users/:user_id/refunds/:refund_id</span><span class="endpoint-description">update a refund</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/refunds/:refund_id</span></p>
+                  <p><strong>Description:</strong> Update a refund.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/users/:user_id/refunds/:refund_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "amount": "200",
+  "reason": "this is reason update",
+  "attached": "this is attached file update",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "status": "pending"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Refund updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/users/:user_id/refunds/:refund_id</span><span class="endpoint-description">delete a refund</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/refunds/:refund_id</span></p>
+                  <p><strong>Description:</strong> Delete refund budget.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/users/:user_id/refunds/:refund_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Refund delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
+        <!-- Request Budget Management Group -->
+        <details>
+          <summary class="summary">Request Budget <span>record store all request budget from staff</span></summary>
+          <ul>
+            <li>
+              <details class="api-details-post">
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users/:user_id/requests</span><span class="endpoint-description">create a request</span></summary>
+                <div class="api-details bg-color-post">
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/users/:user_id/requests</span></p>
+                  <p><strong>Description: </strong> Create a request</p>
+                  <h4>Example Request:</h4>
+                  <pre>POST https://api.example.com/organizations/:org_id/users/:user_id/requests</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "amount": "100",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
+                  </pre>
+                  <h4>Responses:</h4>
+                  <pre>
+{
+  "request_id": "30315d51-02b4-4e2d-b583-2c392c0ec346",
+  "status": "pending",
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "amount": "100",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/requests/:request_id</span><span class="endpoint-description">get a request</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/requests/:request_id</span></p>
+                  <p><strong>Description:</strong> Get a request.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/requests/:request_id</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": {
+      "request_id": "30315d51-02b4-4e2d-b583-2c392c0ec346",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "amount": 100,
+      "reason": "this is reason",
+      "attached": "this is attached file",
+      "status": "pending",
+      "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "created_at": "2025-03-13T07:56:41.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Request not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/requests</span><span class="endpoint-description">get list request</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/requests</span></p>
+                  <p><strong>Description:</strong> Get list request.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/requests</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [ 
+    {
+      "request_id": "30315d51-02b4-4e2d-b583-2c392c0ec346",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "amount": 100,
+      "reason": "this is reason",
+      "attached": "this is attached file",
+      "status": "pending",
+      "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "created_at": "2025-03-13T07:56:41.000Z",
+      "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Requests not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-patch">
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/users/:user_id/requests/:request_id</span><span class="endpoint-description">update a request</span></summary>
+                <div class="api-details bg-color-patch">
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/requests/:request_id</span></p>
+                  <p><strong>Description:</strong> Update a request.</p>
+                  <h4>Example Request:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/users/:user_id/requests/:request_id</pre>
+                  <h4>Parameters:</h4>
+                  <pre>
+{
+  "amount": 200,
+  "reason": "this is reason update",
+  "attached": "this is attached file update",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "status": "accepted"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Request updated successfully!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-delete">
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/users/:user_id/requests/:request_id</span><span class="endpoint-description">delete a request</span></summary>
+                <div class="api-details bg-color-delete">
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/requests/:request_id</span></p>
+                  <p><strong>Description:</strong> Delete a request.</p>
+                  <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/users/:user_id/requests/:request_id</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Request delete successfully!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </details>
         <!-- Request Leave Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Request Leave <span>staff record asking leave</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users/:user_id/leaves</span><span class="endpoint-description">create a leave</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/users/:user_id/leaves</span></p>
+                  <p><strong>Description: </strong> Create a leave</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/users/:user_id/leaves</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "start_date": "2015-01-12 03:45:00",
+  "end_date": "2015-01-12 03:45:00",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "leave_id": "a0dbeeec-b4b7-46c0-ba6f-bef400c443f0",
+  "status": "pending",
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "start_date": "2015-01-12 03:45:00",
+  "end_date": "2015-01-12 03:45:00",
+  "reason": "this is reason",
+  "attached": "this is attached file",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/leaves/:leave_id</span><span class="endpoint-description">get a leave</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/leaves/:leave_id</span></p>
+                  <p><strong>Description:</strong> Get a request.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/leaves/:leave_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "leave_id": "a0dbeeec-b4b7-46c0-ba6f-bef400c443f0",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "start_date": "2015-01-12T03:45:00.000Z",
+      "end_date": "2015-01-12T03:45:00.000Z",
+      "attached": "this is attached file",
+      "status": "pending",
+      "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "reason": "this is reason",
+      "created_at": "2025-03-13T08:07:12.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Leave not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/leaves</span><span class="endpoint-description">get list leaves</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/leaves</span></p>
+                  <p><strong>Description:</strong> Get list leaves.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/leaves</pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [ 
+    {
+      "leave_id": "89e9fda3-4d19-463b-9b38-574d0e9b844f",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "df868db8-9940-476f-bc95-a7295b6c1a09",
+      "start_date": "2015-01-12T03:45:00.000Z",
+      "end_date": "2015-01-12T03:45:00.000Z",
+      "attached": "this is attached file",
+      "status": "pending",
+      "approver": "df868db8-9940-476f-bc95-a7295b6c1a09",
+      "reason": "this is reason",
+      "created_at": "2025-02-28T10:27:44.000Z",
+      "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Leaves not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/users/:user_id/leaves/:leave_id</span><span class="endpoint-description">update a leave</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/leaves/:leave_id</span></p>
+                  <p><strong>Description:</strong> Update a leave.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/users/:user_id/leaves/:leave_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "start_date": "2025-03-12 03:45:00",
+  "end_date": "2025-03-15 03:45:00",
+  "reason": "this is reason update",
+  "attached": "this is attached file update",
+  "approver": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "status": "accepted"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Request Leave updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/users/:user_id/leaves/:leave_id</span><span class="endpoint-description">delete a leave</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/leaves/:leave_id</span></p>
+                  <p><strong>Description:</strong> Delete a leave.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/users/:user_id/leaves/:leave_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Leave delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Request Debt Management Group -->
-        <!-- <details>
+        <details>
           <summary class="summary">Request Debt <span>record request everyone related to pay back the debt</span></summary>
           <ul>
             <li>
               <details class="api-details-post">
-                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-post"><span class="badge post">POST</span><span class="endpoint">/organizations/:org_id/users/:user_id/debts</span><span class="endpoint-description">create a debts</span></summary>
                 <div class="api-details bg-color-post">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint: </strong><span class="endpoint">/organizations</span></p>
-                  <p><strong>Description: </strong>Adds an organization to the system by Stablu</p>
+                  <p><strong>Method:</strong> POST</p>
+                  <p><strong>Endpoint: </strong><span class="endpoint"> /organizations/:org_id/users/:user_id/debts</span></p>
+                  <p><strong>Description: </strong> Create a debt</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
+                  <pre>POST https://api.example.com/organizations/:org_id/users/:user_id/debts</pre>
                   <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "amount": "100",
+  "reason": "this is reason"
+}
                   </pre>
                   <h4>Responses:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "debt_id": "454c8b8c-25d6-41ef-a5a5-7ac818b086bc",
+  "status": "pending",
+  "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+  "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+  "amount": "100",
+  "reason": "this is reason"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-get">
-                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/debts/:debt_id</span><span class="endpoint-description">get a debt</span></summary>
                 <div class="api-details bg-color-get">
                   <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/debts/:debt_id</span></p>
+                  <p><strong>Description:</strong> Get a debt.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/debts/:debt_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "data": {
+      "debt_id": "454c8b8c-25d6-41ef-a5a5-7ac818b086bc",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "amount": 100,
+      "reason": "this is reason",
+      "status": "pending",
+      "created_at": "2025-03-13T08:12:15.000Z",
+      "updated_at": null
+  },
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": null,
+  "status": 404,
+  "message": "Debt not exist!"
+}
+                  </pre>
+                </div>
+              </details>
+            </li>
+            <li>
+              <details class="api-details-get">
+                <summary class="bg-color-get"><span class="badge get">GET</span><span class="endpoint">/organizations/:org_id/users/:user_id/debts</span><span class="endpoint-description">get list debts</span></summary>
+                <div class="api-details bg-color-get">
+                  <p><strong>Method:</strong> GET</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/debts</span></p>
+                  <p><strong>Description:</strong> Get list debts.</p>
+                  <h4>Example Request:</h4>
+                  <pre>GET https://api.example.com/organizations/:org_id/users/:user_id/debts</pre>
+                  <h4>Query Params:</h4>
+                  <pre>
+- user_id: string
+- status: string
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "data": [ 
+    {
+      "debt_id": "454c8b8c-25d6-41ef-a5a5-7ac818b086bc",
+      "org_id": "0bbc0ed0-495d-47b0-95f4-921561b2368f",
+      "user_id": "cfe9a2b5-3da8-4512-a755-91c223f62663",
+      "amount": 100,
+      "reason": "this is reason",
+      "status": "pending",
+      "created_at": "2025-03-13T08:12:15.000Z",
+      "updated_at": null
+    }
+  ],
+  "status": 200
+}
+                  </pre>
+                  <h4>Not Found:</h4>
+                  <pre>
+{
+  "data": [],
+  "status": 404,
+  "message": "Debts not exist!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-patch">
-                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-patch"><span class="badge patch">PATCH</span><span class="endpoint">/organizations/:org_id/users/:user_id/debts/:debt_id</span><span class="endpoint-description">update a debt</span></summary>
                 <div class="api-details bg-color-patch">
-                  <p><strong>Method:</strong> GET</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Retrieve a list of users.</p>
+                  <p><strong>Method:</strong> PATCH</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/debts/:debt_id</span></p>
+                  <p><strong>Description:</strong> Update a debt.</p>
                   <h4>Example Request:</h4>
-                  <pre>GET https://api.example.com/users</pre>
-                  <h4>Example Response:</h4>
+                  <pre>PATCH https://api.example.com/organizations/:org_id/users/:user_id/debts/:debt_id</pre>
+                  <h4>Parameters:</h4>
                   <pre>
-                    {
-                      "users": [
-                        { "id": 1, "name": "John Doe" },
-                        { "id": 2, "name": "Jane Smith" }
-                      ]
-                    }
+{
+  "amount": "200",
+  "reason": "this is reason update",
+  "status": "accepted"
+}
+                  </pre>
+                  <h4>Response:</h4>
+                  <pre>
+{
+  "status": 200,
+  "message": "Request debt updated successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
             <li>
               <details class="api-details-delete">
-                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></summary>
+                <summary class="bg-color-delete"><span class="badge delete">DELETE</span><span class="endpoint">/organizations/:org_id/users/:user_id/debts/:debt_id</span><span class="endpoint-description">delete a debts</span></summary>
                 <div class="api-details bg-color-delete">
-                  <p><strong>Method:</strong> POST</p>
-                  <p><strong>Endpoint:</strong><span class="endpoint">/users</span><span class="endpoint-description">create an organization</span></p>
-                  <p><strong>Description:</strong> Create a new user.</p>
+                  <p><strong>Method:</strong> DELETE</p>
+                  <p><strong>Endpoint:</strong><span class="endpoint"> /organizations/:org_id/users/:user_id/debts/:debt_id</span></p>
+                  <p><strong>Description:</strong> Delete a debts.</p>
                   <h4>Example Request:</h4>
+                  <pre>DELETE https://api.example.com/organizations/:org_id/users/:user_id/debts/:debt_id</pre>
+                  <h4>Response:</h4>
                   <pre>
-                    POST https://api.example.com/users
-                    {
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
-                  </pre>
-                  <h4>Example Response:</h4>
-                  <pre>
-                    {
-                      "id": 3,
-                      "name": "New User",
-                      "email": "newuser@example.com"
-                    }
+{
+  "status": 200,
+  "message": "Debt delete successfully!"
+}
                   </pre>
                 </div>
               </details>
             </li>
           </ul>
-        </details> -->
+        </details>
         <!-- Stock Report Management Group -->
         <!-- <details>
           <summary class="summary">Stock Reports <span>every stock report have been generated we can store it</span></summary>
